@@ -1,0 +1,12 @@
+<template name="admin"> 
+	<header class="navbar">
+		<div class="navbar navbar-default" role="navigation">
+			<h1>Manage accounts & Roles</h1>
+		    {{#if isAdminUser}}
+		        {{> accountsAdmin}}
+		    {{else}}
+		        Must be admin to see this...
+		    {{/if}}
+		</div>
+	</header> 
+</template>

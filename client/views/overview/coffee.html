@@ -1,0 +1,36 @@
+<template name="coffee">
+		<div class="panel panel-primary">
+  			<div class="panel-heading">Coffee supplies bought</div>
+				<div class="panel-body">
+    				<p>All money collected will be used for buying coffee supplies. Here you can see what is bought and how much money is collected from the coffeejar.</p>
+				</div>
+				
+				<table class="table table-bordered table-striped">
+					<tbody>
+						<th>Date</th>
+						<th>Action</th>
+						<th>Brand</th>
+						<th>Type</th>
+						<th>Amount</th>
+						<th>Price</th>
+						{{#if checkUser}}
+							<th>Delete</th>
+						{{/if}}
+						{{#each coffeeData}}
+						<tr>
+							<td>{{date}}</td>
+							<td>{{action}}</td>
+							<td>{{coffeebrand}}</td>
+							<td>{{type}}</td>
+							<td>{{amount}} gram</td>
+							<td>€ {{price}}</td>
+							{{#if checkUser}}
+								<td><button type="submit" id="deletetransaction" class="btn btn-primary"><a>Delete</a></button></td>
+							{{/if}}
+						</tr>
+						{{/each}}
+
+					</tbody>
+				</table>
+		</div>
+</template>

@@ -1,0 +1,11 @@
+/* CSS declarations go here */
+.btn-primary a{
+	text-decoration: none !important;
+	color: white !important;
+
+}
+
+.btn-primary:hover{
+	color: white !important;
+	text-decoration: none !important;
+}
