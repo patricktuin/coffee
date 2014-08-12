@@ -18,6 +18,7 @@ Template.coffee.balance = function() {
     var total =0;
     var data = Coffee.find().map(function(coffee) {
         total += coffee.price;
+        total = Math.round(total*100)/100;
     });
     return total;
 }

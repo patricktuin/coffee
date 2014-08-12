@@ -1,11 +1,23 @@
 <template name="header"> 
-	<header class="navbar">
-		<div class="navbar navbar-default" role="navigation">
-		    <div class="navbar-header">
-		        <a class="navbar-brand" href="/">KPN Digital Coffee information</a>
-		    </div>
-	
-		    <div class="navbar-collapse collapse">
+	<nav class="navbar navbar-default" role="navigation">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <img src="/images/kpn-logo.jpg" class="img-responsive">
+	    </div>
+	   
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">	
+	        
+      <ul class="nav navbar-nav navbar-right">
+	        <!-- <li><a href="#">Link</a></li> -->
 		    	{{#if checkUser}}
 		        <ul class="nav navbar-nav">
 		            <li class="active"><a href="{{pathFor 'addtransaction'}}">Add a transaction</a></li>
@@ -17,9 +29,46 @@
 		        <ul class="nav navbar-nav navbar-right">
 		            {{> loginButtons }}
 		        </ul>
-
-		    </div>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+<!-- 	second navbar for the "real" options -->
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<ul class="nav nav-pills">
+				  <li class="active"><a href="{{pathFor 'coffee'}}">Home</a></li>
+				  <li class="info" data-toggle="modal" data-target="#myModal"><a>More info on website</a></li>
+				</ul>
+			</div>
 		</div>
-	</header> 
+	</nav>
+<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="myModalLabel">KPN Digital Coffee page</h4>
+	      </div>
+	      <div class="modal-body">
+	        <h4>Since the first machine was a success until now, a second machine will be added in the yellow area really soon!</h4><br>
+	        <b>This site gives an overview of how much money is put in the coffee jar and what is bought for that money. </b><br><br>
+	        <b>More features will be added.</b><br><br>
+	        <b>One of the important things on the backlog is adding info on what all the warning lights means. And also information on how to use the machine.</b>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<!-- 	        <button type="button" class="btn btn-primary">Save changes</button> -->
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	
+
+
+
 	{{analytics}}
 </template>
