@@ -2,9 +2,9 @@
 		<div class="panel panel-primary">
   			<div class="panel-heading">Coffee supplies bought</div>
 				<div class="panel-body">
-    				<p>All money collected will be used for buying coffee supplies. Here you can see what is bought and how much money is collected from the coffeejar.</p>
+    				<p>All money collected will be used for buying coffee supplies. Here you can see what is bought and how much money is collected from the coffeejar on the third floor in Amsterdam.</p>
 				</div>
-				
+				{{currentBalance}}
 				<table class="table table-bordered table-striped">
 					<tbody>
 						<th>Date</th>
@@ -22,15 +22,33 @@
 							<td>{{action}}</td>
 							<td>{{coffeebrand}}</td>
 							<td>{{type}}</td>
-							<td>{{amount}} gram</td>
+							<td>{{amount}} 
+							<!-- Only put text "gram" in column if amount is really filled -->
+							{{#if amount}}
+								gram
+							{{else}}
+							{{/if}}
+							</td>
 							<td>€ {{price}}</td>
 							{{#if checkUser}}
 								<td><button type="submit" id="deletetransaction" class="btn btn-primary"><a>Delete</a></button></td>
 							{{/if}}
 						</tr>
 						{{/each}}
+						<tr class="balance">
+							<td>Current balance</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>€ {{balance}}</td>
+						</tr>
 
 					</tbody>
 				</table>
 		</div>
+	{{analytics}}
 </template>
+
+
+

@@ -14,15 +14,17 @@ if (Meteor.isClient) {
 //       }
 // });
 
-// Template.coffee.helpers({ 
-//      x: function() {
-//               return Meteor.user();
-//       }
-// });
+Template.coffee.balance = function() {
+    var total =0;
+    var data = Coffee.find().map(function(coffee) {
+        total += coffee.price;
+    });
+    return total;
+}
 
 // Template.coffee.helpers({ 
 //      currentBalance: function() {
-// //               return Coffee.aggregate([ {$group: {_id: null,total: {$sum: "$price"}}}]);
+//          return Coffee.aggregate([ {$group: {_id: null,total: {$sum: "$price"}}}]);
 //       }
 // });
 
